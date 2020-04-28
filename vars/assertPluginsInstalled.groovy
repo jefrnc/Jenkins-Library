@@ -1,13 +1,8 @@
-#!/usr/bin/groovy
-
-// Basado en otros proyectos: 
-// https://github.com/lachie83/jenkins-pipeline/tree/dev
-package io.jenkinsextend;
-
+ 
 /**
  * @author Sean G Wilbur sgwilbur
  **/
-def assertPluginsInstalled( Map params ){
+def call( Map params ){
   // helper for local debugging
   def verbosity = (params.get('verbosity') ?: 0).toInteger()
   def mock = (params.get('mock') ?: 0).asBoolean()
