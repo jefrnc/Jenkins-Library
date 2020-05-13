@@ -21,6 +21,11 @@ def saveCredentials(pwd){
    sh "echo \""+ pwd +"\" | pass insert jira -e"
 }
 
+
+def saveApproval(project, issue, envName,  user) {
+
+}
+
 def getList(project, format) {
 
     println "Obteniendo lista de elementos del proyecto: " + project
@@ -60,7 +65,5 @@ def getIssueByVersion(project, version) {
       throw new Exception(jiraCheckMsg)
 
 
- 
-   
      //
 }
