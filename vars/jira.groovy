@@ -64,3 +64,16 @@ def getIssueByVersion(project, version) {
    
      //
 }
+
+
+def IfConfirm(field, property, value) {
+    if (field && !field.empty) {
+        if (field[property]) {
+            if (field[property]==value ) {
+                return true
+            }
+        }
+         
+    }
+     return false
+}
