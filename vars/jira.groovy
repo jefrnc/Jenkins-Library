@@ -46,6 +46,21 @@ def getIssueByVersion(project, version) {
         returnStdout: true
     ).trim()
 
-    println "La tarjeta asociada es: " + SH_CMD 
+    if (SH_CMD) { 
+        if (SH_CMD!= "") { 
+          println "La tarjeta asociada es: " + SH_CMD 
+          return SH_CMD
+        }
+    }
+
+       
+      jiraCheckMsg =  "No se encontraron tarjetas activas para el proyecto ${project} y la version ${version}"
+      println jiraCheckMsg
+      //error msg
+      throw new Exception(jiraCheckMsg)
+
+
+ 
+   
      //
 }
