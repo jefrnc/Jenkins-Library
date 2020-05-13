@@ -22,8 +22,12 @@ def saveCredentials(pwd){
 }
 
 
-def saveApproval(project, issue, envName,  user) {
+def requestApproval(project, issue, envName,  user) {
+  sh "jiracli request -M POST rest/api/2/issue/"+ issue + "/comment '{\"body\":\"El usuario " + user + " solicito al aprobacion al ambiente "+ envName + ".\" }' --endpoint=" + env.JIRA_SERVER
+}
 
+def saveApproval(project, issue, envName,  user) {
+    sh "jiracli request -M POST rest/api/2/issue/"+ issue + "/comment '{\"body\":\"El usuario " + user + " acepto el pasaje a "+ envName + ".\" }' --endpoint=" + env.JIRA_SERVER
 }
 
 def getList(project, format) {
