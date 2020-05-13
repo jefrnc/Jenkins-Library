@@ -40,7 +40,7 @@ def getIssueByVersion(project, version) {
 
         script: '''
                     set +x  
-                    jiracli list --template table --query "project = 'APDP' and affectedVersion IN ('8.0')  ORDER BY priority asc, created" --endpoint=''' + env.JIRA_SERVER + ''' | grep -i APDP | awk -F '|' '{ print $2 }' | sed -e 's/^[[:space:]]*//'
+                    jiracli list --template table --query "project = 'APDP' and affectedVersion IN ('4.0')  ORDER BY priority asc, created" --endpoint=''' + env.JIRA_SERVER + ''' | grep -i APDP | awk -F '|' '{ print $2 }' | sed -e 's/^[[:space:]]*//'
                     set -x
                 ''',
         returnStdout: true
