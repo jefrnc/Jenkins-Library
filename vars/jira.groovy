@@ -43,9 +43,9 @@ def getIssueByVersion(project, version) {
                     jiracli list --template table --query "project = 'APDP' and affectedVersion IN ('8.0')  ORDER BY priority asc, created" --endpoint=''' + env.JIRA_SERVER + ''' | grep -i APDP | awk -F '|' '{ print $2 }' | sed -e 's/^[[:space:]]*//'
                     set -x
                 ''',
-        returnStdout: false
+        returnStdout: true
     ).trim()
 
-      
+    println "La tarjeta asociada es: " + SH_CMD 
      //
 }
