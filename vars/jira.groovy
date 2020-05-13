@@ -29,8 +29,8 @@ def getList(project, format) {
         script: "jiracli list --template="+ format + " --query \"project = '"+ project +"'\"  --endpoint=" + env.JIRA_SERVER,
         returnStdout: true
     )
-
-    sh "echo ${SH_CMD}"
+    println "${SH_CMD}"
+ 
 }
 
  
