@@ -30,7 +30,7 @@ def getList(project, format) {
         returnStdout: true
     )
 
-    sh "${SH_CMD}"
+    sh "echo ${SH_CMD}"
 }
 
  
