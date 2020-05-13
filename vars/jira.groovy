@@ -21,3 +21,18 @@ def saveCredentials(pwd){
    sh "echo \""+ pwd +"\" | pass insert jira -e"
 }
 
+def getList(project, format) {
+
+    echo "Obteniendo lista de elementos del proyecto: " + project
+
+    SH_CMD = sh (
+        script: "jiracli list --template="+ format + " --query \"project = '"+ username +"'\"  --endpoint=" + env.JIRA_SERVER,
+        returnStdout: true
+    )
+
+    sh "${SH_CMD}"
+}
+}
+
+ 
+
