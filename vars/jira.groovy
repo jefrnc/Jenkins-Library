@@ -39,5 +39,6 @@ def getIssueByVersion(project, version) {
         returnStdout: true
     ).trim()
 
-     println "Obteniendo tarjeta de version en JIRA: " + version + "-> ${SH_CMD}"
+     println "Obteniendo tarjeta de version en JIRA: " + version + "-> " + SH_CMD
+     //
 }
