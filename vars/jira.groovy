@@ -32,7 +32,6 @@ def getList(project, format) {
 
     sh "${SH_CMD}"
 }
-}
 
  
 
