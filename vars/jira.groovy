@@ -8,7 +8,13 @@ def getTag(tech) {
 }
 
 def login(username){
-   sh "jiracli login -u "+ username +"  --endpoint=" + env.JIRA_SERVER
+
+    SH_CMD = sh (
+        script: "jiracli login -u "+ username +"  --endpoint=" + env.JIRA_SERVER,
+        returnStdout: true
+    ).trim()
+
+    echo "Verificando conexion con JIRA: ${SH_CMD}"
 }
 
 def saveCredentials(pwd){
