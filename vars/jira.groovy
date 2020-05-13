@@ -23,7 +23,7 @@ def saveCredentials(pwd){
 
 def getList(project, format) {
 
-    echo "Obteniendo lista de elementos del proyecto: " + project
+    println "Obteniendo lista de elementos del proyecto: " + project
 
     SH_CMD = sh (
         script: "jiracli list --template="+ format + " --query \"project = '"+ project +"'\"  --endpoint=" + env.JIRA_SERVER,
