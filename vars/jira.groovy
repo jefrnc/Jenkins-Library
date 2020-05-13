@@ -34,7 +34,7 @@ def getList(project, format) {
 }
 def getIssueByVersion(project, version) {
     SH_CMD = sh (
-        script: "jiracli list --template table --query \"project = 'APDP' and affectedVersion IN ('4.0')  ORDER BY priority asc, created\" --endpoint=http://localhost:8088/ | grep -i APDP | awk -F '|' '{ print $2 }' | sed -e 's/^[[:space:]]*//'",
+        script: "jiracli list --template table --query \"project = 'APDP' and affectedVersion IN ('4.0')  ORDER BY priority asc, created\" --endpoint=http://localhost:8088/ | grep -i APDP | awk -F '|' '{ print \$2 }' | sed -e 's/^[[:space:]]*//'",
         returnStdout: true
     ).trim()
 
