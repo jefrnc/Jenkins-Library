@@ -29,14 +29,18 @@ def IfConfirm(field, property, value) {
     print 'verificando campo ' + field
     if (field && !field.empty) {
         print 'verificando propiedad ' + property
-        if (field[property]) {
-             print 'el valor es ' + field[property]
-            if (field[property]==value ) {
-                print 'se devuelve true'
-                return true
-            } else {
-                 print 'se devuelve false'
+        try { 
+            if (field[property]) {
+                print 'el valor es ' + field[property]
+                if (field[property]==value ) {
+                    print 'se devuelve true'
+                    return true
+                } else {
+                    print 'se devuelve false'
+                }
             }
+        } catch {
+            false
         }
          
     }
