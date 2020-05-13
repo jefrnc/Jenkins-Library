@@ -10,4 +10,8 @@ def getTag(tech) {
 def login(username){
    sh "jiracli login -u "+ username +"  --endpoint=" + env.JIRA_SERVER
 }
- 
+
+def saveCredentials(pwd){
+   sh "echo \""+ pwd +"\" | pass insert jira -e"
+}
+
